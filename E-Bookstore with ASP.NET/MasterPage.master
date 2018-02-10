@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Book store</title>
+    
+    <!-- Τo βασικό css του site -->
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    
+    <div id="pageContainer"><!-- O Βασικός container -->
+	<div id="leftDiv"><!-- Αριστερή στήλη -->
+		<div id="logo">
+			<img alt="logo" height="130" src="images/logo.gif" width="159"/>
+			<h4>My e-Book Store</h4>
+		</div>
+		<div class="leftDivMenu">
+		    <asp:Panel ID="userMenuPanel" runat="server">
+		        <h3> &nbsp;</h3>
+		          <asp:Menu ID="Menu2" runat="server" BackColor="#E3EAEB" 
+                        DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                        ForeColor="#666666" StaticSubMenuIndent="10px" Orientation="Vertical">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White"  />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/home.aspx" Text="Αρχική " Value="Αρχική ">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/myOrders.aspx" Text="Οι παραγγελίες μου" Value="Οι παραγγελίες">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/editaccount.aspx" Text="Στοιχεία Λογαριασμού" 
+                                Value="Στοιχεία Λογαριασμού">
+                            </asp:MenuItem>
+                        </Items>
+                </asp:Menu>
+		</asp:Panel>
+		
+		</div>
+		<div>
+            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+		    <br />
+            <br />
+            <asp:Menu ID="Menu3" runat="server" BackColor="#FFFBD6" 
+                DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                ForeColor="#990000" StaticSubMenuIndent="10px">
+                <StaticSelectedStyle BackColor="#FFCC66" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#FFFBD6" />
+                <DynamicSelectedStyle BackColor="#FFCC66" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="adminCategories.aspx" Text="Κατηγορίες" 
+                        Value="Κατηγορίες"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+		</div>
+	</div>
+	<div id="topDiv">
+	    
+	    <div class="bottomPosMenu">
+            <asp:Menu ID="Menu1" runat="server" BackColor="#E3EAEB" 
+                DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                ForeColor="#666666" StaticSubMenuIndent="10px" Orientation="Horizontal">
+                <StaticSelectedStyle BackColor="#1C5E55" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#666666" ForeColor="White"  />
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/home.aspx" Text="Αρχική " Value="Αρχική ">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/shopinfo.aspx" Text="Το κατάστημά μας " Value="Το Κατάστημά μας">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/productCategories.aspx" Text="Προϊόντα" Value="Προϊόντα">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/showCart.aspx" Text="To καλάθι μου" Value="To καλάθι μου">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/userRegistration.aspx" Text="Εγγραφή Πελατών" Value="Εγγραφή Πελατών">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/loginUser.aspx" Text="Είσοδος" Value="Είσοδος">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/contact.aspx" Text="Επικοινωνία" Value="Επικοινωνία">
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+		</div>
+	</div>
+	
+	<div id="contentDiv"><!-- O container των "υποσελίδων" -->
+	     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+	
+	</div>
+ 	<div id="footerDiv"><a style="color:silver" href="#"> Σχεδιαστής: Λάζαρος Δεβετζής</a>
+	</div>
+</div>
+
+    
+    
+    
+    <div>
+   
+    </div>
+    </form>
+</body>
+</html>
